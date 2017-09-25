@@ -4,6 +4,7 @@
 #include <QFrame>
 #include <QPushButton>
 #include <QTimer>
+#include <QGridLayout>
 #include "global_defs.h"
 #include "media_source.h"
 #include "multicast_group.h"
@@ -16,13 +17,13 @@ class Domain : public QFrame
 
 public:
 
-
+    QGridLayout Layout;
     QPushButton Domain1;
     QPushButton Domain2;
     QPushButton Domain3;
     SharedMemory<TMM_CntlBuffer>& ctrl_buffer;
 
-    Domain(QWidget* parent,SharedMemory<TMM_CntlBuffer>& ctrl_buffer_);
+    Domain(SharedMemory<TMM_CntlBuffer>& ctrl_buffer_);
 
     virtual ~Domain();
 

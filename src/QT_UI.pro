@@ -14,10 +14,11 @@ SOURCES += \
     radio.cpp \
     shoutdown.cpp \
     domain.cpp \
-    constants.cpp \
     ../../TMM_CTRL/src/media_source.cpp \
     ../../TMM_CTRL/src/multicast_group.cpp \
-    ../../TMM_CTRL/src/TMM_StreamCtrl.cpp
+    ../../TMM_CTRL/src/TMM_StreamCtrl.cpp \
+    vu_meter.cpp \
+    masterpanel.cpp
 
 HEADERS += \
     radio.h \
@@ -27,4 +28,8 @@ HEADERS += \
     domain.h \
     ../../TMM_CTRL/src/media_source.h \
     ../../TMM_CTRL/src/multicast_group.h \
-    ../../TMM_CTRL/src/TMM_StreamCtrl.h
+    ../../TMM_CTRL/src/TMM_StreamCtrl.h \
+    vu_meter.h \
+    masterpanel.h
+
+RESOURCES +=

@@ -31,9 +31,7 @@ public:
 
             if (fd==-1)
             {
-                char* p = get_current_dir_name();
-
-                perror(p);
+                perror(filename);
                 exit(-1);
             }
 

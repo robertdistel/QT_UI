@@ -2,14 +2,15 @@
 #define GLOBAL_DEFS_H
 
 
-const int width=120;
-const int height=40;
+const int width=30;
+const int height=20;
 
 
 
 
 
-extern const char * RootSwapName;
+
+#define  RootSwapName  "./shmem_blk.swap"
 
 
 

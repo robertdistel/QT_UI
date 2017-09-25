@@ -4,6 +4,7 @@
 #include <QFrame>
 #include <QPushButton>
 #include <QTimer>
+#include <QGridLayout>
 #include "global_defs.h"
 #include "media_source.h"
 #include "multicast_group.h"
@@ -17,6 +18,7 @@ class Shoutdown : public QFrame
 public:
 
     QTimer      StatusTimer;
+    QGridLayout                     Layout;
 
     QPushButton Button;
 
@@ -24,7 +26,7 @@ public:
     MulticastGroup              theShoutdownGroup;
     SharedMemory<TMM_CntlBuffer>& ctrl_buffer;
 
-    Shoutdown(QWidget* parent,MediaSource theOperator_, MulticastGroup   theShoutdownGroup_, SharedMemory<TMM_CntlBuffer>& ctrl_buffer_);
+    Shoutdown(MediaSource theOperator_, MulticastGroup   theShoutdownGroup_, SharedMemory<TMM_CntlBuffer>& ctrl_buffer_);
 
     virtual ~Shoutdown();
 

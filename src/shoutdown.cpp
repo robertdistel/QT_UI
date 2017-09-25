@@ -6,13 +6,31 @@
 #include <QString>
 
 
-Shoutdown::Shoutdown(QWidget* parent,MediaSource theOperator_, MulticastGroup   theShoutdownGroup_, SharedMemory<TMM_CntlBuffer>& ctrl_buffer_):QFrame(parent),theOperator(theOperator_),theShoutdownGroup(theShoutdownGroup_),ctrl_buffer(ctrl_buffer_)
+Shoutdown::Shoutdown(MediaSource theOperator_, MulticastGroup   theShoutdownGroup_, SharedMemory<TMM_CntlBuffer>& ctrl_buffer_)
+    :theOperator(theOperator_)
+    ,theShoutdownGroup(theShoutdownGroup_)
+    ,ctrl_buffer(ctrl_buffer_)
 {
+    //attach this layout
+    setLayout(&Layout);
+
+    Layout.addWidget(&Button,0,0,2,2);
+    for(size_t k=0; k<2; k++)
+    {
+        Layout.setColumnMinimumWidth(k,::width);
+        Layout.setColumnStretch(k,1);
+        Layout.setRowMinimumHeight(k,::height);
+        Layout.setRowStretch(k,1);
+    }
+    //set sizing policy
+    QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+    sizePolicy.setHorizontalStretch(0);
+    sizePolicy.setVerticalStretch(0);
+
+
+    Button.setSizePolicy(sizePolicy);
     Button.setCheckable(false);
     Button.setText("Talk");
-    Button.setParent(this);
-    Button.setGeometry(::width/2,(::height*.5)/2, 3* ::width,::height);
-    setFixedSize(4* ::width, (3.5 * ::height)/2);
     setFrameShadow(QFrame::Raised);
     setFrameShape(QFrame::Box);
 
