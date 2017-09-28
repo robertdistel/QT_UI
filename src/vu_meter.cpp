@@ -24,7 +24,6 @@ void VU_Meter::paintEvent(QPaintEvent *event)
     //grab the current power of the stream
     int8_t pwr=-f();
 
-    std::cout << (int)pwr << std::endl;
     if (pwr<MIN)
         pwr=MIN;
     if(pwr>MAX)

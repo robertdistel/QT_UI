@@ -8,7 +8,7 @@
 #include <QString>
 
 Radio::Radio(MediaSource theOperator_, MediaSource theRadio_,MulticastGroup theRadioGroup_, SharedMemory<TMM_CntlBuffer>& ctrl_buffer_)
-    :RX_LevelMeter("RX", std::function<int8_t(void)>( [&](){return rand()%40 -6 ;}))
+    :RX_LevelMeter("RX", std::function<int8_t(void)>( [&](){return ctrl_buffer->getPower(theRadio_);}))
     ,theOperator(theOperator_)
     ,theRadio(theRadio_)
     ,theRadioGroup(theRadioGroup_)
