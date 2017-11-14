@@ -1,0 +1,6 @@
+#!/bin/bash
+ARCH=$(uname -m)
+MAKEFILE_NAME="makefile.$ARCH"
+cd build
+make -f $MAKEFILE_NAME all
+
