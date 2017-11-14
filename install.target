@@ -1,0 +1,4 @@
+#!/bin/bash 
+FILE="build/QT_UI"
+cp $FILE ~/Downloads/;
+
