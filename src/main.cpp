@@ -118,7 +118,7 @@ int main(int argc, char **argv)
 
 
 
-
+    frame.setWindowState(Qt::WindowFullScreen);
 
     frame.show();
 
