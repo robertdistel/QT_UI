@@ -8,7 +8,7 @@
 #include <QString>
 
 Radio::Radio(MediaSource theOperator_, MediaSource theRadio_,MulticastGroup theRadioGroup_, SharedMemory<TMM_CntlBuffer>& ctrl_buffer_)
-    :RX_LevelMeter("RX", std::function<int8_t(void)>( [&](){return ctrl_buffer->getPower(theRadio_);}))
+    :RX_LevelMeter("RX", std::function<int8_t(void)>( [&](){return ctrl_buffer->getPower(theRadio);}))
     ,theOperator(theOperator_)
     ,theRadio(theRadio_)
     ,theRadioGroup(theRadioGroup_)
@@ -101,7 +101,7 @@ void Radio::Mute_toggled()
     }
     else
     {
-        ctrl_buffer->setGain(theRadio,-127);
+        ctrl_buffer->setGain(theRadio,127);
         MuteButton.setText("unmute");
     }
     timer_update();
